@@ -2,11 +2,14 @@
 // var myApp = angular.module('myApp');
 
 angular.module('myApp')
-.controller('myController', ['$scope', 'mainCharacter', function($scope, mainCharacter){ // create a controller. use $scope before controller is being used
+.controller('myController', ['$scope', 'mainCharacter', 'CharacterVersionFactory', function($scope, mainCharacter, CharacterVersionFactory){ // create a controller. use $scope before controller is being used 
+//think of $scope, mainCharacter, CharacterVersionFactory like import
 
   //dependencies injection
   $scope.myFirstName = 'Ross';
   $scope.myModel = 'Ready Player One';
   $scope.mainCharacter = mainCharacter; // this comes from js/vaules.js
+  $scope.CharVer = CharacterVersionFactory.genCharVersion(); // this comes from js/factories.js
+  //use .genCharVersion, which is the key, to run the function attach to CharacterVersionFactory which the object
 
 }]);
