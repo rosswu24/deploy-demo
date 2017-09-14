@@ -16,7 +16,9 @@ myApp
 .config(function(){
 	//config
 })
-.run(function(){
+.run(['APP_VERSION', '$rootScope', function(APP_VERSION, $rootScope){ // APP_VERSION comes from js/controller.js 
+//rootscope, make it so can see other controller nested or below it
 	//initialize
 	// runs before angular is even runned
-});
+	$rootScope.version = APP_VERSION;
+}]);
